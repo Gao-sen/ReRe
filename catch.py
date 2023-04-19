@@ -9,16 +9,16 @@ with open('catch.csv') as f:
     #检测csv文件总行数
     lineall = len(f.readlines())
     print('================================================')
-    print('～～～Rere正在启动，检测到csv文件共[{0}]行～～～'.format(lineall))
+    print('～～～ReRe正在启动，检测到csv文件共[{0}]行～～～'.format(lineall))
     print('================================================')
     
 #打开fasta文件并读取所有行的列表,储存在内存中
-print('～～～～～～Rere正在读取fasta文件～～～～～～')
+print('～～～～～～ReRe正在读取fasta文件～～～～～～')
 with open('cj.fasta') as f:
     all_lines = f.readlines()
 #检测fasta文件的总行数   
 num_lines = len(all_lines)
-print(f'～～～Rere检测到fasta文件一共{num_lines}行～～～')
+print(f'～～～ReRe检测到fasta文件一共{num_lines}行～～～')
 print('================================================')
 
 #打开csv文件
@@ -78,4 +78,4 @@ with open('catch.csv') as f:
             sys.exit()
         #检查找到的序列总数是否等于csv的行数
         if check == (lineall):
-            print('～～～～～～～Rere已经顺利完成任务～～～～～～～')
+            print('～～～～～～～ReRe已经顺利完成任务～～～～～～～')
