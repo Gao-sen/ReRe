@@ -4,22 +4,24 @@ import os,sys  # 导入os和sys模块
 import csv # 导入csv模块，截取的序列的信息表为csv格式
 import pprint
 
+  
 #打开csv文件
 with open('catch.csv') as f:
     #检测csv文件总行数
     lineall = len(f.readlines())
-    print('================================================')
-    print('～～～ReRe正在启动，检测到csv文件共[{0}]行～～～'.format(lineall))
-    print('================================================')
+    print('==============================================')
+    print('～～Rere正在启动，请确保已经清空result文件～～')
+    print('～～～～～～检测到csv文件共[{0}]行～～～～～～'.format(lineall))
+    print('==============================================')
     
 #打开fasta文件并读取所有行的列表,储存在内存中
-print('～～～～～～ReRe正在读取fasta文件～～～～～～')
+print('～～～～～～Rere正在读取fasta文件～～～～～～')
 with open('cj.fasta') as f:
     all_lines = f.readlines()
 #检测fasta文件的总行数   
 num_lines = len(all_lines)
-print(f'～～～ReRe检测到fasta文件一共{num_lines}行～～～')
-print('================================================')
+print(f'～～～Rere检测到fasta文件一共{num_lines}行～～～')
+print('==============================================')
 
 #打开csv文件
 with open('catch.csv') as f:
@@ -63,14 +65,15 @@ with open('catch.csv') as f:
         with open('results.fasta','a+') as r:
             r.write('>')
             r.write(A)
+            r.write(';')
             r.write(B)
-            r.write('\r\n')
+            r.write('\n')
             r.write(cut)
-            r.write('\r\n')
+            r.write('\n')
             print('ReRe在文件{0}中添加了第{1}个序列的结果'.format('results.fasta', (y+1)))
         #检查是否在cj.fasta中找到序列
         if check == (y+1):#找到了
-            print('================================================')
+            print('==============================================')
         else:#没找到
             print('ReRe检查到在cj.fasta中未找到第{0}个序列并添加了空白的结果，或者找到了多个该序列'.format((y+1)))
             print('ReRe自闭了，所以自己关闭了自己，喵喵喵')
@@ -78,4 +81,4 @@ with open('catch.csv') as f:
             sys.exit()
         #检查找到的序列总数是否等于csv的行数
         if check == (lineall):
-            print('～～～～～～～ReRe已经顺利完成任务～～～～～～～')
+            print('～～～～～～Rere已经顺利完成任务～～～～～～')
