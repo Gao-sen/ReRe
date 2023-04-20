@@ -70,7 +70,7 @@ with open('catch.csv') as f:
             r.write('\n')
             r.write(cut)
             r.write('\n')
-            print('ReRe在文件{0}中添加了第{1}个序列的结果'.format('results.fasta', (y+1)))
+            print('ReRe在{0}文件中添加了第{1}个序列的结果'.format('results', (y+1)))
         #检查是否在cj.fasta中找到序列
         if check == (y+1):#找到了
             print('==============================================')
